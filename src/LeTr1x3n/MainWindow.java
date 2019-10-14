@@ -5,15 +5,16 @@ import javax.swing.*;
 public class MainWindow extends JFrame {
 
     public MainWindow(){
-        setTitle("Змейка");
+        setTitle("Snake " + "                    Your Score: ");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(320,345);
-        setLocation(400,400);
+        setSize(640,665);
+        setLocation(650,200);
         add(new GameField());
         setVisible(true);
     }
 
     public static void main(String[] args){
+
         MainWindow mw = new MainWindow();
     }
 }

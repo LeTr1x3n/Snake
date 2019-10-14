@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GameField extends JPanel implements ActionListener {
-    private final int SIZE = 320;
+    private final int SIZE = 640;
     private final int DOT_SIZE = 16;
     private final int ALL_DOTS = 400;
     private Image dot;
@@ -27,6 +27,7 @@ public class GameField extends JPanel implements ActionListener {
     private boolean inGame = true;
 
 
+
     public GameField(){
         setBackground(Color.black);
         loadImages();
@@ -41,7 +42,7 @@ public class GameField extends JPanel implements ActionListener {
             x[i] = 48 - i*DOT_SIZE;
             y[i] = 48;
         }
-        timer = new Timer(250,this);
+        timer = new Timer(150,this);
         timer.start();
         createApple();
     }
@@ -68,8 +69,10 @@ public class GameField extends JPanel implements ActionListener {
             }
         } else{
             String str = "Game Over";
+            String result = "Your score: ";
             g.setColor(Color.white);
-            g.drawString(str,125,SIZE/2);
+            g.drawString(str,250,SIZE/2);
+            g.drawString(result,250,SIZE/2+20);
         }
     }
 
