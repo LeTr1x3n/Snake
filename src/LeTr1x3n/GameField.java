@@ -19,6 +19,7 @@ public class GameField extends JPanel implements ActionListener {
     private int[] x = new int[ALL_DOTS];
     private int[] y = new int[ALL_DOTS];
     private int dots;
+    private int score;
     private Timer timer;
     private boolean left = false;
     private boolean right = true;
@@ -38,6 +39,7 @@ public class GameField extends JPanel implements ActionListener {
 
     public void initGame(){
         dots = 3;
+        score = 0;
         for (int i = 0; i < dots; i++) {
             x[i] = 48 - i*DOT_SIZE;
             y[i] = 48;
@@ -68,11 +70,12 @@ public class GameField extends JPanel implements ActionListener {
                 g.drawImage(dot,x[i],y[i],this);
             }
         } else{
-            String str = "Game Over";
-            String result = "Your score: ";
+            String str = "Game Over :(";
+            String result = "Your score: " + score;
             g.setColor(Color.white);
             g.drawString(str,250,SIZE/2);
             g.drawString(result,250,SIZE/2+20);
+
         }
     }
 
@@ -98,6 +101,7 @@ public class GameField extends JPanel implements ActionListener {
     public void checkApple(){
         if(x[0] == appleX && y[0] == appleY){
             dots++;
+            score++;
             createApple();
         }
     }

@@ -5,7 +5,7 @@ import javax.swing.*;
 public class MainWindow extends JFrame {
 
     public MainWindow(){
-        setTitle("Snake " + "                    Your Score: ");
+        setTitle("Snake");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(640,665);
         setLocation(650,200);
